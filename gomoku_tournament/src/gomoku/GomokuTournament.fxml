@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <VBox>
+         <children>
+            <HBox prefHeight="30.0" spacing="10.0">
+               <children>
+                  <Button onAction="#newTournament" text="New Tournament" prefWidth="145.0"/>
+                  <ProgressBar fx:id="progressBar" layoutX="54.0" layoutY="103.0" prefHeight="51.0" prefWidth="335.0" progress="0.0" />
+                  <Label fx:id="percentage" text="0%" prefHeight="46.0" prefWidth="51.0"/>
+               </children>
+               <!--<children>
+                  <HBox fx:id="replayHBox" prefHeight="30.0" prefWidth="250.0" visible="false">
+                     <children>
+                        <Label minWidth="100.0" text="Replay">
+                        </Label>
+                        <Button minWidth="40.0" mnemonicParsing="false" onAction="#firstMove" text="&lt;&lt;" />
+                        <Button minWidth="30.0" mnemonicParsing="false" onAction="#previousMove" text="&lt;" />
+                        <Button minWidth="50.0" mnemonicParsing="false" onAction="#play" text="Play" />
+                        <Button minWidth="30.0" mnemonicParsing="false" onAction="#nextMove" text="&gt;" />
+                        <Button minWidth="40.0" mnemonicParsing="false" onAction="#lastMove" text="&gt;&gt;" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#loadReplay" text="Load replay" />
+                  <Button mnemonicParsing="false" onAction="#saveReplay" text="Save replay" visible="false" fx:id="saveReplay"/>
+               </children>-->
+            </HBox>
+         </children>
+         <children>
+         	<HBox>
+        		<TableView fx:id="playersTable" layoutX="12.0" layoutY="62.0" prefHeight="324.0" prefWidth="553.0">
+			      <columns>
+			        <TableColumn prefWidth="205.0" text="Player" fx:id="playerColumn" />
+			        <TableColumn prefWidth="80.0" text="Wins" fx:id="winsColumn" />
+			        <TableColumn prefWidth="80.0" text="Draws" fx:id="drawsColumn" />
+			        <TableColumn prefWidth="80.0" text="Loses" fx:id="losesColumn" />
+			        <TableColumn prefWidth="103.0" text="Win rate %" fx:id="winRateColumn" />
+			      </columns>
+    			</TableView>
+    			<TableView fx:id="gamesTable" layoutX="12.0" layoutY="62.0" prefHeight="324.0" prefWidth="580.0">
+			      <columns>
+			        <TableColumn prefWidth="150.0" text="White" fx:id="white" />
+			        <TableColumn prefWidth="150.0" text="Black" fx:id="black" />
+			        <TableColumn prefWidth="100.0" text="Board Size" fx:id="boardSize" />
+			        <TableColumn prefWidth="103.0" text="Result" fx:id="gameResult" />
+			      </columns>
+    			</TableView>
+        	</HBox>
+    	</children>
+      </VBox>
+   </top>
+   <center>
+      <GridPane fx:id="board">
+      </GridPane>
+   </center>
+   <bottom>
+      <AnchorPane>
+         <children>
+            <Label fx:id="statusLabel" AnchorPane.leftAnchor="0.0">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></Label>
+            <Label fx:id="playerLabel" AnchorPane.rightAnchor="0.0">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
